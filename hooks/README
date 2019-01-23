@@ -1,0 +1,3 @@
+請將 pre-commit 放置於 clone 目錄之 .git/hooks 目錄，並設定 chmod 0755 .git/hooks/pre-commit
+
+此工具能幫您檢查是否遺留測試資料（ex. 帳密）。

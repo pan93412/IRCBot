@@ -1,0 +1,25 @@
+#!/usr/bin/bash
+
+echo "請稍等…… 正在檢查隱私資訊是否存在！"
+echo "TIP: 請在 commit 之前先檢查 Username, Nick, Realname, Password 欄位值是否淨空。"
+
+filelist=$(find -name "*" -type f)
+checkFields="Username Nick Realname Password"
+isPass=true
+for i in $filelist
+do
+    for j in $checkFields
+    do
+        checkUsername=$(grep -E -e "${j}"': ".+",' $i)
+        if [[ ! $checkUsername == "" ]]
+        then
+            echo "警告！檔案 $i 的 $j 欄位值不為空……"
+            isPass=false
+        fi
+    done
+done
+
+if [ $isPass == false ]
+then
+    exit 255
+fi
