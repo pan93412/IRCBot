@@ -147,10 +147,10 @@ func (IRC *IRCInfo) ConnectTLS(verbose bool) (*tls.Conn, error) {
 
 func main() {
     var IRCD IRCInfo = IRCInfo {
-        Username: "OAO",
-        Realname: "OWO",
-        Nick: "QAQ",
-        Password: ":PWD:OAO:OWO",
+        Username: "",
+        Realname: "",
+        Nick: "",
+        Password: "",
         Server: "irc.freenode.net",
         Port: "7000",
         SASLEnabled: true,
